@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Surpresa!</title>
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      color: lime;
+      font-family: monospace;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    button {
+      padding: 20px 40px;
+      font-size: 24px;
+      background: red;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      animation: pulse 1s infinite;
+      cursor: pointer;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
+    .msg {
+      position: absolute;
+      font-size: 32px;
+      background: black;
+      color: red;
+      padding: 40px;
+      border: 3px solid red;
+      border-radius: 10px;
+      display: none;
+      z-index: 10;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="mostrarMensagem()">Clique Aqui!</button>
+  <div class="msg" id="mensagem">VOCÊ FOI HACKEADO!<br>Posso te ver pela câmera.</div>
+
+  <script>
+    function mostrarMensagem() {
+      document.querySelector("button").style.display = "none";
+      document.getElementById("mensagem").style.display = "block";
+    }
+  </script>
+</body>
+</html>
